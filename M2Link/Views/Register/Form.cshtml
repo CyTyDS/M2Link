@@ -1,0 +1,57 @@
+﻿@model M2Link.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Form";
+}
+
+<h2>Form</h2>
+
+@if (@Model != null)
+{
+    if (@Model.GetType().Name == "RegisterModel")
+    {
+        <p>@Model.Mdp n'est pas un mot de passe valide</p>
+    }
+    if (@Model.GetType().Name == "String")
+    {
+        <p>@Model</p>
+    }
+}
+
+@using (Html.BeginForm())
+{
+
+    <fieldset>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Nom)
+            @Html.EditorFor(m => m.Nom)
+        </div>
+        <div class="form-group">
+
+            @Html.LabelFor(m => m.Prenom)
+            @Html.EditorFor(m => m.Prenom)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)
+            @Html.EditorFor(m => m.Email)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Pseudo)
+            @Html.EditorFor(m => m.Pseudo)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Mdp)
+            @Html.PasswordFor(m => m.Mdp)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.VerifMDP)
+            @Html.PasswordFor(m => m.VerifMDP)
+        </div>
+        @Html.ValidationMessageFor(m => m.Mdp)
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+
+    </fieldset>
+
+}
