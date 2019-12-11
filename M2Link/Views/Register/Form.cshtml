@@ -6,18 +6,6 @@
 
 <h2>Form</h2>
 
-@if (@Model != null)
-{
-    if (@Model.GetType().Name == "RegisterModel")
-    {
-        <p>@Model.Mdp n'est pas un mot de passe valide</p>
-    }
-    if (@Model.GetType().Name == "String")
-    {
-        <p>@Model</p>
-    }
-}
-
 @using (Html.BeginForm())
 {
 

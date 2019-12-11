@@ -28,6 +28,7 @@ namespace M2Link.Controllers
         {
             if (rm.Mdp.Length < 8)
             {
+                ModelState.AddModelError("Mdp", "Le mot de passe est trop faible");
                 return View("Form", rm);
             }
             return View("Form");
