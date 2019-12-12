@@ -1,4 +1,5 @@
 ﻿using M2Link.Models;
+using M2Link.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,6 +59,10 @@ namespace M2Link.Controllers
             
             if (ModelState.IsValid)
             {
+                /*Context.M2LinkContext c = new Context.M2LinkContext();
+                UserRepository r = new UserRepository(c);
+                r.GetAll();
+                c.SaveChanges();*/
                 return RedirectToAction("Index", "Home");
             }
 
