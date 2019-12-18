@@ -1,0 +1,28 @@
+﻿@model M2Link.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Log In</h2>
+
+@using (Html.BeginForm())
+{
+
+<fieldset>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Pseudo)
+        @Html.EditorFor(m => m.Pseudo)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Mdp)
+        @Html.PasswordFor(m => m.Mdp)
+    </div>
+
+    @Html.ValidationSummary()
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+</fieldset>
+
+}

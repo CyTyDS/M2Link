@@ -1,4 +1,5 @@
-﻿using M2Link.Models;
+﻿using M2Link.Entities;
+using M2Link.Models;
 using M2Link.Repositories;
 using System;
 using System.Collections.Generic;
@@ -63,6 +64,20 @@ namespace M2Link.Controllers
                 UserRepository r = new UserRepository(c);
                 r.GetAll();
                 c.SaveChanges();*/
+
+                Context.M2LinkContext c = new Context.M2LinkContext();
+                UserRepository r = new UserRepository(c);
+                User us = new User
+                {
+                    UserId = Guid.NewGuid(),
+                    Prenom = rm.Prenom,
+                    Nom = rm.Nom,
+                    Pseudo = rm.Pseudo,
+                    Email = rm.Email,
+                    Mdp = rm.Mdp
+                };
+                r.Add(us);
+                c.SaveChanges();
                 return RedirectToAction("Index", "Home");
             }
 

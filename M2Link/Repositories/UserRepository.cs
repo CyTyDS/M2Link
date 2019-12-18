@@ -17,17 +17,29 @@ namespace M2Link.Repositories
 
         public void Add(User user)
         {
-            this.context.User.Add(user);
+            this.context.Users.Add(user);
         }
 
         public IEnumerable<User> GetAll()
         {
-            return context.User;
+            return context.Users;
         }
 
         public User GetUserByID(int id)
         {
-            return this.context.User.Find(id);
+            return this.context.Users.Find(id);
+        }
+
+        public User GetUserByPseudo(string pseudo)
+        {
+            try
+            {
+                return this.context.Users.Where(q => q.Pseudo == pseudo).First();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }

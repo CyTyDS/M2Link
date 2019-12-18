@@ -15,16 +15,16 @@ namespace M2Link.Context
             User user = new User
             {
                 UserId = Guid.NewGuid(),
-                Prenom = "David",
-                Nom = "S.",
+                Prenom = "toto",
+                Nom = "titi",
                 Pseudo = "PyTy",
                 Email = "oki@doki.io",
                 Mdp = "Chocolat*123"
             };
 
-            context.User.Add(user);
+            context.Users.Add(user);
 
-            base.Seed(context);
+            context.SaveChanges();
         }
     }
 }
