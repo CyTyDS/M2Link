@@ -21,13 +21,11 @@ namespace M2Link.Controllers
         [HttpPost]
         public ActionResult Index(LoginModel rm)
         {
-
-
             if (rm != null)
             {
                 Context.M2LinkContext c = new Context.M2LinkContext();
                 UserRepository r = new UserRepository(c);
-                //TODO test si l'user n'appartient pas au registre des users
+                //test si l'user n'appartient pas au registre des users
                 User u = r.GetUserByPseudo(rm.Pseudo);
                 if (u == null)
                 {
@@ -46,7 +44,7 @@ namespace M2Link.Controllers
             {
                 //Ici, l'user est dans la DB
 
-                FormsAuthentication.SetAuthCookie(rm.Pseudo, false);
+                FormsAuthentication.SetAuthCookie(rm.Pseudo, true);
                 return RedirectToAction("Index", "Home");
             }
 

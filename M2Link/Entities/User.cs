@@ -17,5 +17,6 @@ namespace M2Link.Entities
         public string Email { get; set; }
         public string Pseudo { get; set; }
         public string Mdp { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
     }
 }

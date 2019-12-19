@@ -1,0 +1,25 @@
+﻿@model M2Link.Models.MessageModel
+
+@{
+    ViewBag.Title = "Nouveau message";
+}
+
+<h2>Nouveau message</h2>
+
+@using (Html.BeginForm())
+{
+
+<fieldset>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Content)
+        @Html.EditorFor(m => m.Content)
+    </div>
+
+    @Html.ValidationSummary()
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+
+</fieldset>
+
+}

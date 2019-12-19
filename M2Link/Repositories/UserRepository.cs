@@ -29,7 +29,6 @@ namespace M2Link.Repositories
         {
             return this.context.Users.Find(id);
         }
-
         public User GetUserByPseudo(string pseudo)
         {
             try
@@ -40,6 +39,16 @@ namespace M2Link.Repositories
             {
                 return null;
             }
+        }
+
+        public IEnumerable<Message> GetAllMessagesOfUser(string pseudo)
+        {
+            User u = this.GetUserByPseudo(pseudo);
+            if (u == null)
+            {
+                return null;
+            }
+            return u.Messages;
         }
     }
 }

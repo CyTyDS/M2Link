@@ -1,10 +1,13 @@
-﻿using M2Link.Models;
+﻿using M2Link.Entities;
+using M2Link.Models;
+using M2Link.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace M2Link.Controllers
 {
@@ -13,7 +16,25 @@ namespace M2Link.Controllers
         [HttpGet]
         public ActionResult Edit()
         {
-            return View("Edit");
+            Context.M2LinkContext c = new Context.M2LinkContext();
+            UserRepository r = new UserRepository(c);
+            User usr = r.GetUserByPseudo(HttpContext.User.Identity.Name);
+            ProfileModel rm;
+            if (usr == null)
+            {
+                rm = new ProfileModel();
+            } else
+            {
+                rm = new ProfileModel
+                {
+                    Nom = usr.Nom,
+                    Prenom = usr.Prenom,
+                    Email = usr.Email,
+                    Pseudo = usr.Pseudo,
+                    Mdp = usr.Mdp
+                };
+            }
+            return View("Edit", rm);
         }
 
         [HttpPost]
@@ -41,6 +62,15 @@ namespace M2Link.Controllers
 
             if (ModelState.IsValid)
             {
+                Context.M2LinkContext c = new Context.M2LinkContext();
+                UserRepository r = new UserRepository(c);
+                User usr = r.GetUserByPseudo(HttpContext.User.Identity.Name);
+                usr.Nom = rm.Nom;
+                usr.Prenom = rm.Prenom;
+                usr.Email = rm.Email;
+                usr.Pseudo = rm.Pseudo;
+                usr.Mdp = usr.Mdp;
+                c.SaveChanges();
                 return RedirectToAction("Index", "Home");
             }
 

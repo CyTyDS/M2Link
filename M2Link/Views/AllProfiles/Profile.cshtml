@@ -1,0 +1,19 @@
+﻿@model M2Link.Models.AllProfilesModel
+
+@{
+    ViewBag.Title = "Profil";
+}
+
+<h2>Profil</h2>
+
+
+<ul>
+    @foreach (var x in Model.Users)
+    {
+        <li>Prénom : @x.Prenom</li>
+        <li>Nom : @x.Nom</li>
+        <li>E-mail : @x.Email</li>
+        <li>Pseudo : @x.Pseudo</li>
+        <li>Mot de passe : *****</li>
+    }
+</ul>
