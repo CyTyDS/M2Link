@@ -36,7 +36,7 @@ namespace M2Link.Controllers
                 mr.Add(msg);
                 c.SaveChanges();
 
-                //TODO Voir using pour fermer le context et continuer le TP (Vérifier que ça marche aussi)
+                //TODO Voir using pour fermer le context et continuer le TP (Vérifier que ça marche aussi) 
                 return RedirectToAction("Index", "Home");
             }
             
