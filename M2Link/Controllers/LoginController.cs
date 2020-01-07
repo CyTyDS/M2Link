@@ -23,10 +23,14 @@ namespace M2Link.Controllers
         {
             if (rm != null)
             {
-                Context.M2LinkContext c = new Context.M2LinkContext();
-                UserRepository r = new UserRepository(c);
-                //test si l'user n'appartient pas au registre des users
-                User u = r.GetUserByPseudo(rm.Pseudo);
+                User u = null;
+                using (var c = new Context.M2LinkContext())
+                {
+                    UserRepository r = new UserRepository(c);
+                    //test si l'user n'appartient pas au registre des users
+                    u = r.GetUserByPseudo(rm.Pseudo);
+                }
+                    
                 if (u == null)
                 {
                     ModelState.AddModelError("Login", "Le pseudo entré n'est pas enregistré dans la base de données.");

@@ -10,6 +10,6 @@
 <ul>
     @foreach (var x in Model.Users)
     {
-        <li><a href="~/AllProfiles/Profil/@x.Pseudo">@x.Pseudo</a></li>
+        <li><a href="~/AllProfiles/Profil/@x.Pseudo">@x.Pseudo</a> - <a href="~/Profile/Subscribe/@x.Pseudo">Subscribe</a></li>
     }
 </ul>
