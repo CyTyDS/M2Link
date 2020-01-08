@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M2Link", "M2Link\M2Link.csproj", "{91D4210E-71CE-4393-895D-E25C5CC5A9A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M2Link.Console", "M2Link.Console\M2Link.Console.csproj", "{C2CF9E54-40A9-478F-877B-BCC938655A87}"
+	ProjectSection(ProjectDependencies) = postProject
+		{91D4210E-71CE-4393-895D-E25C5CC5A9A4} = {91D4210E-71CE-4393-895D-E25C5CC5A9A4}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{91D4210E-71CE-4393-895D-E25C5CC5A9A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91D4210E-71CE-4393-895D-E25C5CC5A9A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91D4210E-71CE-4393-895D-E25C5CC5A9A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

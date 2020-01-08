@@ -33,8 +33,11 @@ namespace M2Link.WebServices
                         {
                             MessageModel messageM = new MessageModel
                             {
+                                MessageId = mess.MessageId,
                                 User = following.Pseudo,
-                                Content = mess.Content
+                                Content = mess.Content,
+                                UserId = u.UserId,
+
                             };
                             messages.Add(messageM);
                         }
@@ -62,7 +65,7 @@ namespace M2Link.WebServices
                 MessageRepository mr = new MessageRepository(c);
                 Message msg = new Message
                 {
-                    MessageId = messageModel.MessageID,
+                    MessageId = messageModel.MessageId,
                     User = u,
                     Content = messageContent
                 };
