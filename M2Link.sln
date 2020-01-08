@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M2LinkXamarin.Android", "M2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M2LinkXamarin.iOS", "M2LinkXamarin\M2LinkXamarin.iOS\M2LinkXamarin.iOS.csproj", "{82F793AC-FE31-425B-9EC6-81FF707FD442}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M2LinkXamarin", "M2LinkXamarin\M2LinkXamarin\M2LinkXamarin.csproj", "{73FD9199-2D81-4B96-95AA-DCD7FD3E20DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M2LinkXamarin", "M2LinkXamarin\M2LinkXamarin\M2LinkXamarin.csproj", "{73FD9199-2D81-4B96-95AA-DCD7FD3E20DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M2Link.Console", "M2Link.Console\M2Link.Console.csproj", "{C2CF9E54-40A9-478F-877B-BCC938655A87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,18 @@ Global
 		{73FD9199-2D81-4B96-95AA-DCD7FD3E20DA}.Release|iPhone.Build.0 = Release|Any CPU
 		{73FD9199-2D81-4B96-95AA-DCD7FD3E20DA}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{73FD9199-2D81-4B96-95AA-DCD7FD3E20DA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Release|iPhone.Build.0 = Release|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{C2CF9E54-40A9-478F-877B-BCC938655A87}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
