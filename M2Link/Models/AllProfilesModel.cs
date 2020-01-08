@@ -8,6 +8,7 @@ namespace M2Link.Models
 {
     public class AllProfilesModel
     {
-        public List<User> Users { get; set; }
+        //Boolean is the answer to "Do I follow this user ?"
+        public IDictionary<User, Boolean> Users { get; set; }
     }
 }

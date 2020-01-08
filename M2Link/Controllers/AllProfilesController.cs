@@ -19,7 +19,17 @@ namespace M2Link.Controllers
             using (var c = new Context.M2LinkContext())
             {
                 UserRepository r = new UserRepository(c);
-                apm.Users = r.GetAll().ToList();
+                User me = r.GetUserByPseudo(HttpContext.User.Identity.Name);
+                apm.Users = new Dictionary<User, Boolean>();
+                foreach (User u in r.GetAll().ToList()) {
+                    if (me.Following.Contains(u))
+                    {
+                        apm.Users.Add(u, true);
+                    } else
+                    {
+                        apm.Users.Add(u, false);
+                    }
+                }
             }
             return View("All", apm);
         }
@@ -36,8 +46,10 @@ namespace M2Link.Controllers
                 {
                     return RedirectToAction("Index");
                 }
-                List<User> l = new List<User>();
-                l.Add(usr);
+
+
+                Dictionary<User, Boolean> l = new Dictionary<User, Boolean>();
+                l.Add(usr, false);// we don't care the boolean
                 apm.Users = l;
             }
             return View("Profile", apm);

@@ -7,9 +7,19 @@
 <h2>Profils</h2>
 
 
-<ul>
-    @foreach (var x in Model.Users)
+<ul class="list-group">
+    @foreach (var x in Model.Users.Keys)
     {
-        <li><a href="~/AllProfiles/Profil/@x.Pseudo">@x.Pseudo</a> - <a href="~/Profile/Subscribe/@x.Pseudo">Subscribe</a></li>
+    <li class="list-group-item">
+        <a href="~/AllProfiles/Profil/@x.Pseudo">@x.Pseudo</a>
+        @if (Model.Users.Where(o => o.Key.Pseudo == x.Pseudo).FirstOrDefault().Value == false)
+        {
+            <text> - <a href="~/Profile/Subscribe/@x.Pseudo">Subscribe</a></text>
+        }
+        else
+        {
+            <text> - <a href="~/Profile/Unsubscribe/@x.Pseudo">Unsubscribe</a></text>
+        }
+    </li>
     }
 </ul>

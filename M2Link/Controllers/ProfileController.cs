@@ -108,5 +108,28 @@ namespace M2Link.Controllers
             }
             return RedirectToAction("Index", "AllProfiles");
         }
+
+        [HttpGet, Route("Profile/Unsubscribe/{pseudo}")]
+        public ActionResult Unsubscribe(string pseudo)
+        {
+            using (var c = new Context.M2LinkContext())
+            {
+                UserRepository r = new UserRepository(c);
+                User usr = r.GetUserByPseudo(pseudo);
+                if (usr == null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+                User me = r.GetUserByPseudo(HttpContext.User.Identity.Name);
+                if (me == null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                me.Following.Remove(usr);
+                c.SaveChanges();
+            }
+            return RedirectToAction("Index", "AllProfiles");
+        }
     }
 }

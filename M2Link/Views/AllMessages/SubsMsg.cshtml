@@ -7,9 +7,9 @@
 <h2>Messages</h2>
 
 
-<ul>
+<ul class="list-group">
     @foreach (var x in Model.Messages)
     {
-        <li>@x.User - @x.Content</li>
+        <li class="list-group-item">@x.User - @x.Content</li>
     }
 </ul>
