@@ -148,6 +148,7 @@
     <Compile Include="Models\MessageModel.cs" />
     <Compile Include="Models\ProfileModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="WebServiceModels\MessageModel.cs" />
     <Compile Include="WebServiceModels\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\MessageRepository.cs" />
