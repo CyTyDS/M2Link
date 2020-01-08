@@ -1,12 +1,7 @@
 ﻿using M2Link.Entities;
+using M2Link.Repositories;
 using M2Link.WebServiceModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
-using System.Text.RegularExpressions;
+
 
 namespace M2Link.WebServices
 {
@@ -22,25 +17,27 @@ namespace M2Link.WebServices
 
         public UserModel Validate(string user, string mdp)
         {
-            if (mdp != null)
+            if (mdp != null || user != "" || user != null)
             {
-                if (mdp.Length > 8)
+                Context.M2LinkContext c = new Context.M2LinkContext();
+                UserRepository r = new UserRepository(c);
+                //test si l'user n'appartient pas au registre des users
+                User u = r.GetUserByPseudo(user);
+                if (u == null)
                 {
-                    Regex r = new Regex(@"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
-                    if (r.IsMatch(mdp))
-                    {
-                        if (user != "" || user != null)
-                        {
-                            UserModel userM = new UserModel
-                            {
-                                Pseudo = user,
-                                Mdp = mdp
-                            };
-                            return userM;
-                        }
-                    }
+                    return null;
                 }
-            }
+                if (!u.Mdp.Equals(mdp))
+                {
+                        return null;
+                }
+                UserModel userM = new UserModel
+                {
+                Pseudo = user,
+                UserId = u.UserId
+                };
+                return userM;
+                } 
             return null;
         }
     }

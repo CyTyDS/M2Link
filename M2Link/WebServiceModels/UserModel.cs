@@ -9,12 +9,8 @@ namespace M2Link.WebServiceModels
 {
     public class UserModel
     {
-        [Required]
-        [DisplayName("Pseudo")]
+     
         public string Pseudo { get; set; }
-
-        [Required]
-        [DisplayName("Mot de passe")]
-        public string Mdp { get; set; }
+        public Guid UserId { get; set; }
     }
 }

@@ -151,8 +151,12 @@
     <Compile Include="Repositories\MessageRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="WebServices\IWSLogin.cs" />
+    <Compile Include="WebServices\IWSMessage.cs" />
     <Compile Include="WebServices\WSLogin.svc.cs">
       <DependentUpon>WSLogin.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\WSMessage.svc.cs">
+      <DependentUpon>WSMessage.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +171,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="WebServices\WSLogin.svc" />
+    <Content Include="WebServices\WSMessage.svc" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
