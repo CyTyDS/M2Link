@@ -25,10 +25,11 @@ namespace M2Link.Repositories
             return context.Users;
         }
 
-        public User GetUserByID(int id)
+        public User GetUserByID(Guid id)
         {
             return this.context.Users.Find(id);
         }
+
         public User GetUserByPseudo(string pseudo)
         {
             try

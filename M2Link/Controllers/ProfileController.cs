@@ -16,23 +16,28 @@ namespace M2Link.Controllers
         [HttpGet]
         public ActionResult Edit()
         {
-            Context.M2LinkContext c = new Context.M2LinkContext();
-            UserRepository r = new UserRepository(c);
-            User usr = r.GetUserByPseudo(HttpContext.User.Identity.Name);
-            ProfileModel rm;
-            if (usr == null)
+            ProfileModel rm = null;
+            using (var c = new Context.M2LinkContext())
             {
-                rm = new ProfileModel();
-            } else
-            {
-                rm = new ProfileModel
+                UserRepository r = new UserRepository(c);
+                User usr = r.GetUserByPseudo(HttpContext.User.Identity.Name);
+                
+                if (usr == null)
                 {
-                    Nom = usr.Nom,
-                    Prenom = usr.Prenom,
-                    Email = usr.Email,
-                    Pseudo = usr.Pseudo,
-                    Mdp = usr.Mdp
-                };
+                    rm = new ProfileModel();
+                }
+                else
+                {
+                    rm = new ProfileModel
+                    {
+                        Nom = usr.Nom,
+                        Prenom = usr.Prenom,
+                        Email = usr.Email,
+                        Pseudo = usr.Pseudo,
+                        Mdp = usr.Mdp,
+                        Messages = usr.Messages
+                    };
+                }
             }
             return View("Edit", rm);
         }
@@ -62,19 +67,46 @@ namespace M2Link.Controllers
 
             if (ModelState.IsValid)
             {
-                Context.M2LinkContext c = new Context.M2LinkContext();
-                UserRepository r = new UserRepository(c);
-                User usr = r.GetUserByPseudo(HttpContext.User.Identity.Name);
-                usr.Nom = rm.Nom;
-                usr.Prenom = rm.Prenom;
-                usr.Email = rm.Email;
-                usr.Pseudo = rm.Pseudo;
-                usr.Mdp = usr.Mdp;
-                c.SaveChanges();
+                using (var c = new Context.M2LinkContext())
+                {
+                    UserRepository r = new UserRepository(c);
+                    User usr = r.GetUserByPseudo(HttpContext.User.Identity.Name);
+                    usr.Nom = rm.Nom;
+                    usr.Prenom = rm.Prenom;
+                    usr.Email = rm.Email;
+                    usr.Pseudo = rm.Pseudo;
+                    usr.Mdp = usr.Mdp;
+                    c.SaveChanges();
+                }
+
                 return RedirectToAction("Index", "Home");
             }
 
             return View("Edit");
+        }
+
+
+        [HttpGet, Route("Profile/Subscribe/{pseudo}")]
+        public ActionResult Subscribe(string pseudo)
+        {
+            using (var c = new Context.M2LinkContext())
+            {
+                UserRepository r = new UserRepository(c);
+                User usr = r.GetUserByPseudo(pseudo);
+                if (usr == null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+                User me = r.GetUserByPseudo(HttpContext.User.Identity.Name);
+                if (me == null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                me.Following.Add(usr);
+                c.SaveChanges();
+            }
+            return RedirectToAction("Index", "AllProfiles");
         }
     }
 }

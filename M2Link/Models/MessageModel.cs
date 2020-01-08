@@ -16,7 +16,5 @@ namespace M2Link.Models
         [Required]
         [DisplayName("Message")]
         public string Content { get; set; }
-
-
     }
 }

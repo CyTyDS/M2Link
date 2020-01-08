@@ -29,6 +29,7 @@ namespace M2Link.Controllers
         [HttpPost]
         public ActionResult Form(RegisterModel rm)
         {
+            //TODO Verify if pseudo already exists
             if (rm != null)
             {
                 if (rm.Mdp != null)
@@ -65,19 +66,22 @@ namespace M2Link.Controllers
                 r.GetAll();
                 c.SaveChanges();*/
 
-                Context.M2LinkContext c = new Context.M2LinkContext();
-                UserRepository r = new UserRepository(c);
-                User us = new User
+                using (var c = new Context.M2LinkContext())
                 {
-                    UserId = Guid.NewGuid(),
-                    Prenom = rm.Prenom,
-                    Nom = rm.Nom,
-                    Pseudo = rm.Pseudo,
-                    Email = rm.Email,
-                    Mdp = rm.Mdp
-                };
-                r.Add(us);
-                c.SaveChanges();
+                    UserRepository r = new UserRepository(c);
+                    User us = new User
+                    {
+                        UserId = Guid.NewGuid(),
+                        Prenom = rm.Prenom,
+                        Nom = rm.Nom,
+                        Pseudo = rm.Pseudo,
+                        Email = rm.Email,
+                        Mdp = rm.Mdp
+                    };
+                    r.Add(us);
+                    c.SaveChanges();
+                }
+
                 return RedirectToAction("Index", "Home");
             }
 

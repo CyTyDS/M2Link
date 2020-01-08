@@ -22,25 +22,26 @@ namespace M2Link.Controllers
         {
             if (rm != null && rm.Content != null)
             {
-                Context.M2LinkContext c = new Context.M2LinkContext();
-                UserRepository ur = new UserRepository(c);
-                MessageRepository mr = new MessageRepository(c);
-                User usr = ur.GetUserByPseudo(HttpContext.User.Identity.Name);
-                Message msg = new Message
+                using (var c = new Context.M2LinkContext())
                 {
-                    MessageId = Guid.NewGuid(),
-                    User = usr,
-                    Content = rm.Content
-                };
-                usr.Messages.Add(msg);
-                mr.Add(msg);
-                c.SaveChanges();
+                    UserRepository ur = new UserRepository(c);
+                    MessageRepository mr = new MessageRepository(c);
+                    User usr = ur.GetUserByPseudo(HttpContext.User.Identity.Name);
+                    Message msg = new Message
+                    {
+                        MessageId = Guid.NewGuid(),
+                        User = usr,
+                        Content = rm.Content
+                    };
+                    usr.Messages.Add(msg);
+                    mr.Add(msg);
+                    c.SaveChanges();
+                }
 
-                //TODO Voir using pour fermer le context et continuer le TP (Vérifier que ça marche aussi)
                 return RedirectToAction("Index", "Home");
             }
-            
+
             return View("Edit");
         }
-}
+    }
 }

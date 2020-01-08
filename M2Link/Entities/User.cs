@@ -18,5 +18,6 @@ namespace M2Link.Entities
         public string Pseudo { get; set; }
         public string Mdp { get; set; }
         public virtual ICollection<Message> Messages { get; set; }
+        public virtual ICollection<User> Following { get; set; }
     }
 }

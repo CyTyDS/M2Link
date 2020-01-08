@@ -1,4 +1,5 @@
-﻿using System;
+﻿using M2Link.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -28,5 +29,8 @@ namespace M2Link.Models
         [Required]
         [DisplayName("Mot de passe")]
         public string Mdp { get; set; }
+
+        [DisplayName("Messages")]
+        public virtual ICollection<Message> Messages { get; set; }
     }
 }
