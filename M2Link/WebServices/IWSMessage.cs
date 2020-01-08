@@ -1,6 +1,7 @@
 ﻿using M2Link.WebServiceModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -15,8 +16,8 @@ namespace M2Link.WebServices
         [OperationContract]
         void DoWork();
         [OperationContract]
-        void GetMessages(UserModel user);
+        Collection<MessageModel> GetMessages(Guid user);
         [OperationContract]
-        void CreateMessage();
+        MessageModel CreateMessage(Guid user, string messageContent);
     }
 }
