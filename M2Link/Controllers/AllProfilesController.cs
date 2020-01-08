@@ -42,22 +42,5 @@ namespace M2Link.Controllers
             }
             return View("Profile", apm);
         }
-
-        
-        [HttpGet]
-        public ActionResult SubsMsg()
-        {
-            AllProfilesModel apm = new AllProfilesModel();
-            using (var c = new Context.M2LinkContext())
-            {
-                UserRepository r = new UserRepository(c);
-                User me = r.GetUserByPseudo(HttpContext.User.Identity.Name);
-                foreach (User usr in me.Following)
-                {
-                    apm.Users.Add(usr);
-                }
-            }
-            return View("SubsMsg", apm); //TODO Vue
-        }
     }
 }

@@ -1,0 +1,15 @@
+﻿@model M2Link.Models.AllMessagesModel
+
+@{
+    ViewBag.Title = "Messages";
+}
+
+<h2>Messages</h2>
+
+
+<ul>
+    @foreach (var x in Model.Messages)
+    {
+        <li>@x.User - @x.Content</li>
+    }
+</ul>

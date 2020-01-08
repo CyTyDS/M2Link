@@ -127,6 +127,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\M2LinkContext.cs" />
     <Compile Include="Context\M2LinkInitializer.cs" />
+    <Compile Include="Controllers\AllMessagesController.cs" />
     <Compile Include="Controllers\AllProfilesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AllMessagesModel.cs" />
     <Compile Include="Models\AllProfilesModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MessageModel.cs" />
@@ -169,6 +171,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\AllMessages\SubsMsg.cshtml" />
     <None Include="Views\Message\Edit.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
