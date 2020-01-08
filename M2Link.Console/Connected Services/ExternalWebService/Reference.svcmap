@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cffd8ad0-3dda-4c94-b6cf-0796532c2ec0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost:44330/WebServices/WSLogin.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WSLogin.xsd" MetadataType="Schema" ID="cf116305-b230-4e72-ac18-25828edc3295" SourceId="1" SourceUrl="https://localhost:44330/WebServices/WSLogin.svc?xsd=xsd2" />
+    <MetadataFile FileName="WSLogin.wsdl" MetadataType="Wsdl" ID="a846da4e-ea6a-4f1b-8966-43c0f9a5dd6e" SourceId="1" SourceUrl="https://localhost:44330/WebServices/WSLogin.svc?wsdl" />
+    <MetadataFile FileName="WSLogin1.xsd" MetadataType="Schema" ID="ce140710-ab62-461e-a8a9-dddfe39500ad" SourceId="1" SourceUrl="https://localhost:44330/WebServices/WSLogin.svc?xsd=xsd1" />
+    <MetadataFile FileName="WSLogin.disco" MetadataType="Disco" ID="32699d40-ee40-4bac-a5de-ab0a9fb5aaeb" SourceId="1" SourceUrl="https://localhost:44330/WebServices/WSLogin.svc?disco" />
+    <MetadataFile FileName="WSLogin2.xsd" MetadataType="Schema" ID="5ec90596-0201-439a-83a4-c3eb6141ff33" SourceId="1" SourceUrl="https://localhost:44330/WebServices/WSLogin.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
