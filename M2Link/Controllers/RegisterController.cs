@@ -29,9 +29,25 @@ namespace M2Link.Controllers
         [HttpPost]
         public ActionResult Form(RegisterModel rm)
         {
-            //TODO Verify if pseudo already exists
+            
             if (rm != null)
             {
+                //Verify Pseudo
+                if (rm.Pseudo != null)
+                {
+                    using (var c = new Context.M2LinkContext())
+                    {
+                        UserRepository r = new UserRepository(c);
+                        User u = r.GetUserByPseudo(rm.Pseudo);
+                        if (u != null)
+                        {
+                            ModelState.AddModelError("Pseudo", "Le Pseudo entré est déjà utilisé.");
+                            return View("Form");
+                        }
+                    }
+                }
+
+                //Verify MDP
                 if (rm.Mdp != null)
                 {
                     if (rm.Mdp.Length < 8)
