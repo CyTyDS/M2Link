@@ -10,7 +10,7 @@ namespace M2LinkXamarin
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()

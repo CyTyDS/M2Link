@@ -45,6 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ExternalWebService.IWSMessage\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ExternalWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -55,6 +60,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\ExternalWebService.IWSMessage\M2Link.Console.ExternalWebService.IWSMessage.MessageModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ExternalWebService.IWSMessage\WSMessage.wsdl" />
+    <None Include="Connected Services\ExternalWebService.IWSMessage\WSMessage.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ExternalWebService.IWSMessage\WSMessage1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ExternalWebService.IWSMessage\WSMessage2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ExternalWebService\M2Link.Console.ExternalWebService.UserModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -73,6 +91,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ExternalWebService.IWSMessage\" />
     <WCFMetadataStorage Include="Connected Services\ExternalWebService\" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +105,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ExternalWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ExternalWebService.IWSMessage\WSMessage.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ExternalWebService.IWSMessage\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ExternalWebService.IWSMessage\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ExternalWebService.IWSMessage\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

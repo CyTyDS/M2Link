@@ -12,6 +12,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M2LinkXamarin", "M2LinkXamarin\M2LinkXamarin\M2LinkXamarin.csproj", "{73FD9199-2D81-4B96-95AA-DCD7FD3E20DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M2Link.Console", "M2Link.Console\M2Link.Console.csproj", "{C2CF9E54-40A9-478F-877B-BCC938655A87}"
+	ProjectSection(ProjectDependencies) = postProject
+		{91D4210E-71CE-4393-895D-E25C5CC5A9A4} = {91D4210E-71CE-4393-895D-E25C5CC5A9A4}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
