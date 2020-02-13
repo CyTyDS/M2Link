@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace M2LinkXamarin.WebServiceClients
+namespace M2LinkXamarin.WebService.Clients
 {
     using System.Runtime.Serialization;
     
@@ -65,7 +65,7 @@ namespace M2LinkXamarin.WebServiceClients
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="M2LinkXamarin.WebServiceClients.IWSLogin")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="M2LinkXamarin.WebService.Clients.IWSLogin")]
     public interface IWSLogin
     {
         
@@ -86,22 +86,22 @@ namespace M2LinkXamarin.WebServiceClients
         string EndHelloWorld(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSLogin/Validate", ReplyAction="http://tempuri.org/IWSLogin/ValidateResponse")]
-        M2LinkXamarin.WebServiceClients.UserModel Validate(string nom, string mdp);
+        M2LinkXamarin.WebService.Clients.UserModel Validate(string nom, string mdp);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IWSLogin/Validate", ReplyAction="http://tempuri.org/IWSLogin/ValidateResponse")]
         System.IAsyncResult BeginValidate(string nom, string mdp, System.AsyncCallback callback, object asyncState);
         
-        M2LinkXamarin.WebServiceClients.UserModel EndValidate(System.IAsyncResult result);
+        M2LinkXamarin.WebService.Clients.UserModel EndValidate(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IWSLoginChannel : M2LinkXamarin.WebServiceClients.IWSLogin, System.ServiceModel.IClientChannel
+    public interface IWSLoginChannel : M2LinkXamarin.WebService.Clients.IWSLogin, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class WSLoginClient : System.ServiceModel.ClientBase<M2LinkXamarin.WebServiceClients.IWSLogin>, M2LinkXamarin.WebServiceClients.IWSLogin
+    public partial class WSLoginClient : System.ServiceModel.ClientBase<M2LinkXamarin.WebService.Clients.IWSLogin>, M2LinkXamarin.WebService.Clients.IWSLogin
     {
         
         public WSLoginClient()
@@ -158,7 +158,7 @@ namespace M2LinkXamarin.WebServiceClients
             return base.Channel.EndHelloWorld(result);
         }
         
-        public M2LinkXamarin.WebServiceClients.UserModel Validate(string nom, string mdp)
+        public M2LinkXamarin.WebService.Clients.UserModel Validate(string nom, string mdp)
         {
             return base.Channel.Validate(nom, mdp);
         }
@@ -168,7 +168,7 @@ namespace M2LinkXamarin.WebServiceClients
             return base.Channel.BeginValidate(nom, mdp, callback, asyncState);
         }
         
-        public M2LinkXamarin.WebServiceClients.UserModel EndValidate(System.IAsyncResult result)
+        public M2LinkXamarin.WebService.Clients.UserModel EndValidate(System.IAsyncResult result)
         {
             return base.Channel.EndValidate(result);
         }
