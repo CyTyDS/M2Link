@@ -12,12 +12,12 @@
 <fieldset>
     <div class="form-group">
         @Html.LabelFor(m => m.Content)
-        @Html.EditorFor(m => m.Content)
+        @Html.EditorFor(m => m.Content, new { htmlAttributes = new { @class = "form-control" } })
     </div>
 
     @Html.ValidationSummary()
     <p>
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </p>
 
 </fieldset>

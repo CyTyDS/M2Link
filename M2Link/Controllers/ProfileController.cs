@@ -11,6 +11,7 @@ using System.Web.Security;
 
 namespace M2Link.Controllers
 {
+    [Authorize]
     public class ProfileController : Controller
     {
         [HttpGet]

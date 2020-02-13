@@ -22,7 +22,15 @@ namespace M2Link.Context
                 Mdp = "Chocolat*123"
             };
 
+            Message msg = new Message
+            {
+                MessageId = Guid.NewGuid(),
+                User = user,
+                Content = ""
+            };
+
             context.Users.Add(user);
+            context.Messages.Add(msg);
 
             context.SaveChanges();
         }

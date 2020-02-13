@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace M2Link.Controllers
 {
+    [Authorize]
     public class MessageController : Controller
     {
         [HttpGet]
