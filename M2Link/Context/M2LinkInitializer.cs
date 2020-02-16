@@ -18,7 +18,7 @@ namespace M2Link.Context
                 Prenom = "admin",
                 Nom = "admin",
                 Pseudo = "admin",
-                Email = "admin.admin.fr",
+                Email = "admin@admin.fr",
                 Mdp = BCrypt.Net.BCrypt.EnhancedHashPassword("admin", workFactor: 12)
             };
 
@@ -26,7 +26,7 @@ namespace M2Link.Context
             {
                 MessageId = Guid.NewGuid(),
                 User = user,
-                Content = ""
+                Content = "Welcom to the Velvet Room !"
             };
 
             context.Users.Add(user);
