@@ -53,6 +53,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next">
+      <Version>3.2.1</Version>
+    </PackageReference>
     <PackageReference Include="bootstrap">
       <Version>4.4.1</Version>
     </PackageReference>

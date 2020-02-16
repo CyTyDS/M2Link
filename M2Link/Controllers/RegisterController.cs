@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using BCrypt.Net;
 using System.Web.Mvc;
 
 namespace M2Link.Controllers
@@ -92,8 +93,9 @@ namespace M2Link.Controllers
                         Nom = rm.Nom,
                         Pseudo = rm.Pseudo,
                         Email = rm.Email,
-                        Mdp = rm.Mdp
-                    };
+                        Mdp = BCrypt.Net.BCrypt.EnhancedHashPassword(rm.Mdp, workFactor: 12)
+
+                };
                     r.Add(us);
                     c.SaveChanges();
                 }

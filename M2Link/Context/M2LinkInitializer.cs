@@ -19,7 +19,7 @@ namespace M2Link.Context
                 Nom = "admin",
                 Pseudo = "admin",
                 Email = "admin.admin.fr",
-                Mdp = "admin"
+                Mdp = BCrypt.Net.BCrypt.EnhancedHashPassword("admin", workFactor: 12)
             };
 
             Message msg = new Message

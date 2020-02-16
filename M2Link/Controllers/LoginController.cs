@@ -1,14 +1,12 @@
 ﻿using M2Link.Entities;
 using M2Link.Models;
 using M2Link.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using BCrypt.Net;
 
 namespace M2Link.Controllers
+
 {
     public class LoginController : Controller
     {
@@ -37,7 +35,8 @@ namespace M2Link.Controllers
                     return View("Login");
                 }
 
-                if (! u.Mdp.Equals(rm.Mdp))
+                if (!BCrypt.Net.BCrypt.EnhancedVerify(rm.Mdp, u.Mdp))
+            
                 {
                     ModelState.AddModelError("Mdp", "Votre mot de passe est incorrect.");
                     return View("Login");

@@ -35,7 +35,7 @@ namespace M2Link.Controllers
                         Prenom = usr.Prenom,
                         Email = usr.Email,
                         Pseudo = usr.Pseudo,
-                        Mdp = usr.Mdp,
+                        Mdp = BCrypt.Net.BCrypt.EnhancedHashPassword(rm.Mdp, workFactor: 12),
                         Messages = usr.Messages
                     };
                 }
@@ -76,7 +76,7 @@ namespace M2Link.Controllers
                     usr.Prenom = rm.Prenom;
                     usr.Email = rm.Email;
                     usr.Pseudo = rm.Pseudo;
-                    usr.Mdp = usr.Mdp;
+                    usr.Mdp = BCrypt.Net.BCrypt.EnhancedHashPassword(rm.Mdp, workFactor: 12);
                     c.SaveChanges();
                 }
 

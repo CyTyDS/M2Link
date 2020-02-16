@@ -27,7 +27,7 @@ namespace M2Link.WebServices
                 {
                     return null;
                 }
-                if (!u.Mdp.Equals(mdp))
+                if (!BCrypt.Net.BCrypt.EnhancedVerify(mdp, u.Mdp))
                 {
                         return null;
                 }
