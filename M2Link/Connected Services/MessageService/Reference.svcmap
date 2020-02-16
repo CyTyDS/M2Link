@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c38cc616-d2c6-43b2-a070-7806928007b0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost:44330/WebServices/WSMessage.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WSMessage.disco" MetadataType="Disco" ID="8a082398-6db2-46ab-8d7b-0f65e68cadd2" SourceId="1" SourceUrl="https://localhost:44330/WebServices/WSMessage.svc?disco" />
+    <MetadataFile FileName="WSMessage.wsdl" MetadataType="Wsdl" ID="e11f53aa-3ff9-462f-8b4e-6548111e63f1" SourceId="1" SourceUrl="https://localhost:44330/WebServices/WSMessage.svc?wsdl" />
+    <MetadataFile FileName="WSMessage.xsd" MetadataType="Schema" ID="86370023-5897-4672-8425-56a676deeebd" SourceId="1" SourceUrl="https://localhost:44330/WebServices/WSMessage.svc?xsd=xsd0" />
+    <MetadataFile FileName="WSMessage1.xsd" MetadataType="Schema" ID="5b61d600-9f6d-4dbc-9451-9bb410ba8bf5" SourceId="1" SourceUrl="https://localhost:44330/WebServices/WSMessage.svc?xsd=xsd1" />
+    <MetadataFile FileName="WSMessage2.xsd" MetadataType="Schema" ID="a2f5f9d7-8b96-42d2-8e2d-8831e0c78935" SourceId="1" SourceUrl="https://localhost:44330/WebServices/WSMessage.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

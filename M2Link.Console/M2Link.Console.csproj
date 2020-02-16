@@ -55,6 +55,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\Login\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\Message\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -84,6 +94,32 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ExternalWebService\WSLogin2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Login\M2Link.Console.Login.UserModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Login\WSLogin.wsdl" />
+    <None Include="Connected Services\Login\WSLogin.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Login\WSLogin1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Login\WSLogin2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Message\M2Link.Console.Message.MessageModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Message\WSMessage.wsdl" />
+    <None Include="Connected Services\Message\WSMessage.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Message\WSMessage1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Message\WSMessage2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Content\bootstrap-grid.css.map" />
@@ -121,6 +157,8 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ExternalWebService.IWSMessage\" />
     <WCFMetadataStorage Include="Connected Services\ExternalWebService\" />
+    <WCFMetadataStorage Include="Connected Services\Login\" />
+    <WCFMetadataStorage Include="Connected Services\Message\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ExternalWebService\WSLogin.disco" />
@@ -153,6 +191,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\Login\WSLogin.disco" />
+    <None Include="Connected Services\Login\configuration91.svcinfo" />
+    <None Include="Connected Services\Login\configuration.svcinfo" />
+    <None Include="Connected Services\Login\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\Message\WSMessage.disco" />
+    <None Include="Connected Services\Message\configuration91.svcinfo" />
+    <None Include="Connected Services\Message\configuration.svcinfo" />
+    <None Include="Connected Services\Message\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
