@@ -15,11 +15,11 @@ namespace M2Link.Context
             User user = new User
             {
                 UserId = Guid.NewGuid(),
-                Prenom = "toto",
-                Nom = "titi",
-                Pseudo = "PyTy",
-                Email = "oki@doki.io",
-                Mdp = "Chocolat*123"
+                Prenom = "admin",
+                Nom = "admin",
+                Pseudo = "admin",
+                Email = "admin.admin.fr",
+                Mdp = "admin"
             };
 
             Message msg = new Message
