@@ -1,10 +1,22 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>Rapport pour le projet de DotNet.</h2>
+<h2>Rapport pour le projet de .NET</h2>
 
-<p class="jumbotron">Nous avons suivi le contenu de tous les TPs, vous trouverez toutes les fonctionnalités décrites dans ceux-ci.<br />
+<p class="jumbotron text-justify">
+    <strong>Fonctionnalités</strong><br />
+    Nous avons suivi le contenu de tous les TPs, vous trouverez toutes les fonctionnalités décrites dans ceux-ci.<br />
     Pour les visuels, nous avons décidé d'utiliser Bootstrap 4.3.<br />
     Pour le hachage des mots de passes, nous avons décidé d'utiliser BCrypt.Net-Next. Ainsi, les mots de passe seront hachés dans la base de données.<br />
-    Pour la partie concernant Xamarin, nous avons rencontré beaucoup de problèmes techniques, les émulateurs ne fonctionnant pas. <br />
-    </p>
+    <br />
+    <strong>Problèmes rencontrés</strong><br />
+    Pour la partie concernant Xamarin, nous avons rencontré beaucoup de problèmes techniques.<br />
+    Tout d'abord, nous avions un problème à propos de la bibliothèque System.ServiceModel.
+    Nous l'avons résolu en mettant en commentaires l'importation de la librairie dans le fichier M2LinkXamarin.csproj .<br />
+    Nous avions ensuite un problème d'émulateur. L'émulateur ne voulait pas se lancer sous certaines conditions.
+    Nous avons donc dû utiliser plusieurs ordinateurs, et installer de multiples utilitaires sur le PC qui marchait.<br />
+    Enfin, le dernier problème qui a empéché totalement le développement de l'application Xamarin a été les EndpointNotFoundException impossible à résoudre.
+    Lors de la consommation des WebServices par l'application mobile sur émulateur, nous arrivons toujours à la même finalité : EndpointNotFoundException.
+    Nous avons eu beau modifier la configuration de Visual Studio ou même du PC, le problème ne disparait pas. 
+    Nous avons donc arrêté le développement de l'application mobile afin de consacrer notre temps aux corrections de bug éventuels sur l'application Web.
+</p>

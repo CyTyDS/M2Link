@@ -5,8 +5,8 @@
 }
 
     <div class="text-center">
-        @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @style="width: 100%; max-width: 330px; padding: 15px; margin: 0 auto;" }))
-        { 
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @style = "width: 100%; max-width: 330px; padding: 15px; margin: 0 auto;" }))
+        {
             <div class="container">
                 <h2 class="float-left mb-0">Log In</h2>
                 <a href="~/Register/Form" class="btn btn-outline-primary float-right" role="button">Sign up</a>
@@ -18,9 +18,9 @@
                 @Html.LabelFor(m => m.Mdp)
                 @Html.PasswordFor(m => m.Mdp, new { @class = "form-control m-auto", @placeholder = "******" })
             </div>
-            
+
             @Html.ValidationSummary()
             <button type="submit" class="btn btn-primary">Login</button>
-
         }
+        <button class="btn btn-primary" onclick="this.textContent='admin admin'">Astuce</button>
     </div>
