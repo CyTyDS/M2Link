@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace M2LinkXamarin.WebService.Clients
+namespace M2LinkXamarin.WebServiceClients
 {
     using System.Runtime.Serialization;
     
@@ -95,7 +95,7 @@ namespace M2LinkXamarin.WebService.Clients
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="M2LinkXamarin.WebService.Clients.IWSMessage")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="M2LinkXamarin.WebServiceClients.IWSMessage")]
     public interface IWSMessage
     {
         
@@ -108,30 +108,30 @@ namespace M2LinkXamarin.WebService.Clients
         void EndDoWork(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSMessage/GetMessages", ReplyAction="http://tempuri.org/IWSMessage/GetMessagesResponse")]
-        M2LinkXamarin.WebService.Clients.MessageModel[] GetMessages(System.Guid user);
+        M2LinkXamarin.WebServiceClients.MessageModel[] GetMessages(System.Guid user);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IWSMessage/GetMessages", ReplyAction="http://tempuri.org/IWSMessage/GetMessagesResponse")]
         System.IAsyncResult BeginGetMessages(System.Guid user, System.AsyncCallback callback, object asyncState);
         
-        M2LinkXamarin.WebService.Clients.MessageModel[] EndGetMessages(System.IAsyncResult result);
+        M2LinkXamarin.WebServiceClients.MessageModel[] EndGetMessages(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSMessage/CreateMessage", ReplyAction="http://tempuri.org/IWSMessage/CreateMessageResponse")]
-        M2LinkXamarin.WebService.Clients.MessageModel CreateMessage(System.Guid user, string messageContent);
+        M2LinkXamarin.WebServiceClients.MessageModel CreateMessage(System.Guid user, string messageContent);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IWSMessage/CreateMessage", ReplyAction="http://tempuri.org/IWSMessage/CreateMessageResponse")]
         System.IAsyncResult BeginCreateMessage(System.Guid user, string messageContent, System.AsyncCallback callback, object asyncState);
         
-        M2LinkXamarin.WebService.Clients.MessageModel EndCreateMessage(System.IAsyncResult result);
+        M2LinkXamarin.WebServiceClients.MessageModel EndCreateMessage(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IWSMessageChannel : M2LinkXamarin.WebService.Clients.IWSMessage, System.ServiceModel.IClientChannel
+    public interface IWSMessageChannel : M2LinkXamarin.WebServiceClients.IWSMessage, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class WSMessageClient : System.ServiceModel.ClientBase<M2LinkXamarin.WebService.Clients.IWSMessage>, M2LinkXamarin.WebService.Clients.IWSMessage
+    public partial class WSMessageClient : System.ServiceModel.ClientBase<M2LinkXamarin.WebServiceClients.IWSMessage>, M2LinkXamarin.WebServiceClients.IWSMessage
     {
         
         public WSMessageClient()
@@ -173,7 +173,7 @@ namespace M2LinkXamarin.WebService.Clients
             base.Channel.EndDoWork(result);
         }
         
-        public M2LinkXamarin.WebService.Clients.MessageModel[] GetMessages(System.Guid user)
+        public M2LinkXamarin.WebServiceClients.MessageModel[] GetMessages(System.Guid user)
         {
             return base.Channel.GetMessages(user);
         }
@@ -183,12 +183,12 @@ namespace M2LinkXamarin.WebService.Clients
             return base.Channel.BeginGetMessages(user, callback, asyncState);
         }
         
-        public M2LinkXamarin.WebService.Clients.MessageModel[] EndGetMessages(System.IAsyncResult result)
+        public M2LinkXamarin.WebServiceClients.MessageModel[] EndGetMessages(System.IAsyncResult result)
         {
             return base.Channel.EndGetMessages(result);
         }
         
-        public M2LinkXamarin.WebService.Clients.MessageModel CreateMessage(System.Guid user, string messageContent)
+        public M2LinkXamarin.WebServiceClients.MessageModel CreateMessage(System.Guid user, string messageContent)
         {
             return base.Channel.CreateMessage(user, messageContent);
         }
@@ -198,7 +198,7 @@ namespace M2LinkXamarin.WebService.Clients
             return base.Channel.BeginCreateMessage(user, messageContent, callback, asyncState);
         }
         
-        public M2LinkXamarin.WebService.Clients.MessageModel EndCreateMessage(System.IAsyncResult result)
+        public M2LinkXamarin.WebServiceClients.MessageModel EndCreateMessage(System.IAsyncResult result)
         {
             return base.Channel.EndCreateMessage(result);
         }

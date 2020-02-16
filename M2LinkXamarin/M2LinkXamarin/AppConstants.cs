@@ -6,6 +6,6 @@ namespace M2LinkXamarin
 {
     class AppConstants
     {
-        public static string WSServer = "http://192.168.0.84:57406";
+        public static string WSServer = "http://localhost:55094";
     }
 }

@@ -26,7 +26,7 @@ namespace M2Link.Context
             {
                 MessageId = Guid.NewGuid(),
                 User = user,
-                Content = "Welcom to the Velvet Room !"
+                Content = "Welcome to the Velvet Room !"
             };
 
             context.Users.Add(user);

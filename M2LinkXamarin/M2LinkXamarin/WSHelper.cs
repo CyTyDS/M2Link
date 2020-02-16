@@ -1,4 +1,4 @@
-﻿using M2LinkXamarin.WebService.Clients;
+﻿using M2LinkXamarin.WebServiceClients;
 //using M2LinkXamarin.WebServiceClients;
 using System;
 using System.Collections.Generic;
